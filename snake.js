@@ -58,6 +58,11 @@ let food = {
     y : Math.floor(Math.random()*15+3) * box
 }
 
+let food1 = {
+    x1 : Math.floor(Math.random()*17+1) * box,
+    y1 : Math.floor(Math.random()*15+3) * box
+}
+
 // create the score var
 
 let score = 0;
@@ -107,28 +112,28 @@ function draw(){
         
         ctx.strokeStyle = "red";
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
-        if(snake[i].x == 7*box && snake[i].y == 8*box)
-        {
-            clearInterval(game);
-            dead.play();
-            up.src = "";
-		    right.src = "";
-		    left.src = "";
-		    down.src = "";
-        }
+		
+		if(snake[i].x == 224 && snake[i].y == 256)
+		{
+			clearInterval(game);
+			dead.play();
+			up.src = "";
+			right.src = "";
+			left.src = "";
+			down.src = "";
+		}
     }
 
-    for( let i = 0; i < anothersnake.length ; i++)// make it move 
-    {
+    for( let i = 0; i < anothersnake.length ; i++){
         ctx.fillStyle = ( i == 0 )? "red" : "black";
         ctx.fillRect(anothersnake[i].x,anothersnake[i].y,box,box);
         
         ctx.strokeStyle = "red";
-        ctx.strokeRect(anothersnake[i].x,anothersnake[i].y,box,box);//
+        ctx.strokeRect(anothersnake[i].x,anothersnake[i].y,box,box);
     }
     
     ctx.drawImage(foodImg, food.x, food.y);
-    ctx.drawImage(foodImg, food.y, food.x); // change 26-feb
+    ctx.drawImage(foodImg, food1.x1, food1.y1); // change 26-feb
 
     
     // old head position
@@ -170,7 +175,11 @@ function draw(){
     
     if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || collision(newHead,snake)){
         clearInterval(game);
-        dead.play();
+		dead.play();
+		up.src = "";
+		right.src = "";
+		left.src = "";
+		down.src = "";
     }
     
     snake.unshift(newHead);
