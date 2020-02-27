@@ -50,12 +50,51 @@ anothersnake[0] = {
     y : 8 * box
 };
 
+let anothersnake1 = [];
+
+anothersnake1[0] = {
+    x : 7 * box,
+    y : 9 * box
+};
+let anothersnake2 = [];
+
+anothersnake[0] = {
+    x : 7 * box,
+    y : 10 * box
+};
+
+let anothersnake3 = [];
+
+anothersnake[0] = {
+    x : 7 * box,
+    y : 11 * box
+};
+let anothersnake4 = [];
+
+anothersnake[0] = {
+    x : 7 * box,
+    y : 12 * box
+};
+
+let anothersnake5 = [];
+
+anothersnake[0] = {
+    x : 7 * box,
+    y : 13 * box
+};
+
+
 
 // create the food
 
 let food = {
     x : Math.floor(Math.random()*17+1) * box,
     y : Math.floor(Math.random()*15+3) * box
+}
+
+let food1 = {
+    x1 : Math.floor(Math.random()*17+1) * box,
+    y1 : Math.floor(Math.random()*15+3) * box
 }
 
 // create the score var
@@ -107,18 +146,69 @@ function draw(){
         
         ctx.strokeStyle = "red";
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
+		
+		if(snake[i].x == 224 && snake[i].y == 256 || snake[i].x == 224 && snake[i].y == 288 || snake[i].x == 224 && snake[i].y == 320 || snake[i].x == 224 && snake[i].y == 352 || snake[i].x == 224 && snake[i].y == 384 || snake[i].x == 224 && snake[i].y == 416)
+		{
+			clearInterval(game);
+			dead.play();
+			up.src = "";
+			right.src = "";
+			left.src = "";
+			down.src = "";
+		}
     }
 
     for( let i = 0; i < anothersnake.length ; i++){
-        ctx.fillStyle = ( i == 0 )? "green" : "white";
+        ctx.fillStyle = ( i == 0 )? "red" : "black";
         ctx.fillRect(anothersnake[i].x,anothersnake[i].y,box,box);
         
         ctx.strokeStyle = "red";
         ctx.strokeRect(anothersnake[i].x,anothersnake[i].y,box,box);
     }
+
+    for( let i = 0; i < anothersnake1.length ; i++){
+        ctx.fillStyle = ( i == 0 )? "red" : "black";
+        ctx.fillRect(anothersnake1[i].x,anothersnake1[i].y,box,box);
+        
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(anothersnake1[i].x,anothersnake1[i].y,box,box);
+    }
+
+    for( let i = 0; i < anothersnake2.length ; i++){
+        ctx.fillStyle = ( i == 0 )? "red" : "black";
+        ctx.fillRect(anothersnake2[i].x,anothersnake2[i].y,box,box);
+        
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(anothersnake2[i].x,anothersnake2[i].y,box,box);
+    }
+
+    for( let i = 0; i < anothersnake3.length ; i++){
+        ctx.fillStyle = ( i == 0 )? "red" : "black";
+        ctx.fillRect(anothersnake3[i].x,anothersnake[i].y,box,box);
+        
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(anothersnake3[i].x,anothersnake3[i].y,box,box);
+    }
+    
+    for( let i = 0; i < anothersnake4.length ; i++){
+        ctx.fillStyle = ( i == 0 )? "red" : "black";
+        ctx.fillRect(anothersnake4[i].x,anothersnake4[i].y,box,box);
+        
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(anothersnake4[i].x,anothersnake4[i].y,box,box);
+    }
+    
+    for( let i = 0; i < anothersnake5.length ; i++){
+        ctx.fillStyle = ( i == 0 )? "red" : "black";
+        ctx.fillRect(anothersnake5[i].x,anothersnake5[i].y,box,box);
+        
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(anothersnake5[i].x,anothersnake5[i].y,box,box);
+    };
+    
     
     ctx.drawImage(foodImg, food.x, food.y);
-    ctx.drawImage(foodImg, food.y, food.x); // change 26-feb
+    ctx.drawImage(foodImg, food1.x1, food1.y1); // change 26-feb
 
     
     // old head position
@@ -160,7 +250,11 @@ function draw(){
     
     if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || collision(newHead,snake)){
         clearInterval(game);
-        dead.play();
+		dead.play();
+		up.src = "";
+		right.src = "";
+		left.src = "";
+		down.src = "";
     }
     
     snake.unshift(newHead);
