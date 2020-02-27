@@ -110,7 +110,7 @@ function draw(){
     }
 
     for( let i = 0; i < anothersnake.length ; i++){
-        ctx.fillStyle = ( i == 0 )? "green" : "white";
+        ctx.fillStyle = ( i == 0 )? "red" : "black";
         ctx.fillRect(anothersnake[i].x,anothersnake[i].y,box,box);
         
         ctx.strokeStyle = "red";
