@@ -107,6 +107,15 @@ function draw(){
         
         ctx.strokeStyle = "red";
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
+        if(snake[i].x == 7*box && snake[i].y == 8*box)
+        {
+            clearInterval(game);
+            dead.play();
+            up.src = "";
+		    right.src = "";
+		    left.src = "";
+		    down.src = "";
+        }
     }
 
     for( let i = 0; i < anothersnake.length ; i++)// make it move 
