@@ -204,7 +204,7 @@ function draw(){
         
         ctx.strokeStyle = "red";
         ctx.strokeRect(anothersnake5[i].x,anothersnake5[i].y,box,box);
-    }
+    };
     
     
     ctx.drawImage(foodImg, food.x, food.y);
