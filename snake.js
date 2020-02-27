@@ -109,12 +109,13 @@ function draw(){
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
 
-    for( let i = 0; i < anothersnake.length ; i++){
+    for( let i = 0; i < anothersnake.length ; i++)// make it move 
+    {
         ctx.fillStyle = ( i == 0 )? "red" : "black";
         ctx.fillRect(anothersnake[i].x,anothersnake[i].y,box,box);
         
         ctx.strokeStyle = "red";
-        ctx.strokeRect(anothersnake[i].x,anothersnake[i].y,box,box);
+        ctx.strokeRect(anothersnake[i].x,anothersnake[i].y,box,box);//
     }
     
     ctx.drawImage(foodImg, food.x, food.y);
