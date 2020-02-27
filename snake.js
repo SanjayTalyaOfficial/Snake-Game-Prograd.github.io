@@ -184,7 +184,7 @@ function draw(){
 
     for( let i = 0; i < anothersnake3.length ; i++){
         ctx.fillStyle = ( i == 0 )? "red" : "black";
-        ctx.fillRect(anothersnake3[i].x,anothersnake[i].y,box,box);
+        ctx.fillRect(anothersnake3[i].x,anothersnake3[i].y,box,box);
         
         ctx.strokeStyle = "red";
         ctx.strokeRect(anothersnake3[i].x,anothersnake3[i].y,box,box);
