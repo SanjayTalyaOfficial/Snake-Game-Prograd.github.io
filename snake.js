@@ -58,27 +58,27 @@ anothersnake1[0] = {
 };
 let anothersnake2 = [];
 
-anothersnake[0] = {
+anothersnake2[0] = {
     x : 7 * box,
     y : 10 * box
 };
 
 let anothersnake3 = [];
 
-anothersnake[0] = {
+anothersnake3[0] = {
     x : 7 * box,
     y : 11 * box
 };
 let anothersnake4 = [];
 
-anothersnake[0] = {
+anothersnake4[0] = {
     x : 7 * box,
     y : 12 * box
 };
 
 let anothersnake5 = [];
 
-anothersnake[0] = {
+anothersnake5[0] = {
     x : 7 * box,
     y : 13 * box
 };
