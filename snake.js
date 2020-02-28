@@ -92,10 +92,7 @@ let food = {
     y : Math.floor(Math.random()*15+3) * box
 }
 
-let food1 = {
-    x1 : Math.floor(Math.random()*17+1) * box,
-    y1 : Math.floor(Math.random()*15+3) * box
-}
+
 
 // create the score var
 
@@ -208,7 +205,6 @@ function draw(){
     
     
     ctx.drawImage(foodImg, food.x, food.y);
-    ctx.drawImage(foodImg, food1.x1, food1.y1); // change 26-feb
 
     
     // old head position
