@@ -53,7 +53,7 @@ anothersnakex[0] = {
 let anothersnakex1 = [];
 
 anothersnakex1[0] = {
-    x : 1 * box, //32
+    x : 10 * box, //32
     y : 9 * box
 };
 let anothersnakex2 = [];
